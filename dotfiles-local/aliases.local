@@ -1,0 +1,2 @@
+alias tl='tail -f -n 100 log/development.log'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'

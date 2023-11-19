@@ -1,0 +1,9 @@
+Plug 'kana/vim-textobj-user'
+Plug 'ericbn/vim-solarized'
+Plug 'cormacrelf/vim-colors-github'
+Plug 'nelstrom/vim-textobj-rubyblock'
+
+UnPlug 'elixir-lang/vim-exlixir'
+UnPlug 'fatih/vim-go'
+UnPlug 'tpope/vim-projectionist'
+UnPlug 'tpop/vim-rhubarb'

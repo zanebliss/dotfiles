@@ -1,0 +1,11 @@
+[alias]
+  a = "add ."
+  lo = "log"
+  ol = "log --oneline"
+  ame = "commit --amend"
+  amn = "commit --amend --no-edit"
+  rc = "rebase --continue"
+  fu = "!git log origin/main..HEAD -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+  fre = "reset --hard origin"
+[include]
+  path = ~/.gitconfig.professional
