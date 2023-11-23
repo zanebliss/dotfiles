@@ -20,9 +20,8 @@ set showcmd
 
 " colors and colorschemes
 syntax enable
-set background=light
-colorscheme solarized
-highlight MatchParen ctermbg=white cterm=none
+set background=dark
+colorscheme quiet
 
 " performance related
 set ttimeout
