@@ -1,3 +1,4 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export BAT_THEME=ansi
