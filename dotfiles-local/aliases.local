@@ -1,2 +1,4 @@
 alias tl='tail -f -n 100 log/development.log'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
+alias vr='vim ~/dotfiles-local/vimrc.local'
+alias zr='vim ~/dotfiles-local/zshrc.local'
