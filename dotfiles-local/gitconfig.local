@@ -9,4 +9,4 @@
   fre = "reset --hard origin"
   cv = "commit -v"
 [include]
-  path = ~/.gitconfig.professional
+  path = ~/.gitconfig.credentials
