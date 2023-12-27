@@ -1,3 +1,1 @@
 set -g mouse on
-
-bind-key -n C-l send-keys C-z \; send-keys " reset && fg > /dev/null" \; send-keys "Enter"
