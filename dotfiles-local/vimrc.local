@@ -1,16 +1,6 @@
 " Author: Zane Bliss
 " Contact: zanebliss@icloud.com
 
-" kitty support
-set mouse=a
-set ttymouse=sgr
-set balloonevalterm
-" vim hardcodes background color erase even if the terminfo file does
-" not contain bce. This causes incorrect background rendering when
-" using a color theme with a background color in terminals such as
-" kitty that do not support background color erase.
-let &t_ut=''
-
 " general set options
 set relativenumber
 set rnu
