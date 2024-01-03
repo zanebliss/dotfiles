@@ -1,3 +1,4 @@
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'robertmeta/nofrils'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
