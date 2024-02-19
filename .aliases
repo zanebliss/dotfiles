@@ -8,7 +8,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 
 alias ..="cd .."
 
-alias vr='vim ~/.vim/vimrc'
-alias vo='source ~/.vim/vimrc'
+alias vr='vim ~/.vimrc'
+alias vo='source ~/.vimrc'
 alias zr='vim ~/.zshrc'
 alias zo='source ~/.zshrc'
