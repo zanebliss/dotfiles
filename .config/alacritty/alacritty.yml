@@ -22,41 +22,41 @@
 # available, otherwise `xterm-256color` is used.
 #TERM: alacritty
 window:
-# Window dimensions (changes require restart)
-#
-# Number of lines/columns (not pixels) in the terminal. Both lines and columns
-# must be non-zero for this to take effect. The number of columns must be at
-# least `2`, while using a value of `0` for columns and lines will fall back
-# to the window manager's recommended size
-#dimensions:
-#  columns: 0
-#  lines: 0
-# Window position (changes require restart)
-#
-# Specified in number of pixels.
-# If the position is not set, the window manager will handle the placement.
-#position:
-#  x: 0
-#  y: 0
-# Window padding (changes require restart)
-#
-# Blank space added around the window in pixels. This padding is scaled
-# by DPI and the specified value is always added at both opposing sides.
-#padding:
-#  x: 0
-#  y: 0
-# Spread additional padding evenly around the terminal content.
-#dynamic_padding: false
-# Window decorations
-#
-# Values for `decorations`:
-#     - full: Borders and title bar
-#     - none: Neither borders nor title bar
-#
-# Values for `decorations` (macOS only):
-#     - transparent: Title bar, transparent background and title bar buttons
-#     - buttonless: Title bar, transparent background and no title bar buttons
-  decorations: none
+  # Window dimensions (changes require restart)
+  #
+  # Number of lines/columns (not pixels) in the terminal. Both lines and columns
+  # must be non-zero for this to take effect. The number of columns must be at
+  # least `2`, while using a value of `0` for columns and lines will fall back
+  # to the window manager's recommended size
+  #dimensions:
+  #  columns: 0
+  #  lines: 0
+  # Window position (changes require restart)
+  #
+  # Specified in number of pixels.
+  # If the position is not set, the window manager will handle the placement.
+  #position:
+  #  x: 0
+  #  y: 0
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is scaled
+  # by DPI and the specified value is always added at both opposing sides.
+  #padding:
+  #  x: 0
+  #  y: 0
+  # Spread additional padding evenly around the terminal content.
+  #dynamic_padding: false
+  # Window decorations
+  #
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #
+  # Values for `decorations` (macOS only):
+  #     - transparent: Title bar, transparent background and title bar buttons
+  #     - buttonless: Title bar, transparent background and no title bar buttons
+  decorations: buttonless
 # Background opacity
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
@@ -702,7 +702,7 @@ font:
   #
   # If the same trigger is assigned to multiple actions, all of them are executed
   # in the order they were defined in.
-  key_bindings:
+  # key_bindings:
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
@@ -808,7 +808,7 @@ font:
   #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
-  - { key: L, mods: Control, chars: "\x0c" }
+  # - { key: L, mods: Control, chars: "\x0c" }
   #debug:
   # Display the time it takes to redraw each frame.
   #render_timer: false
@@ -834,30 +834,30 @@ font:
   # Highlight window damage information.
   #highlight_damage: false
 colors:
-  # Default colors
+  name: Railscasts (dark)
+  author: Chris Kempson
   primary:
-    background: '#0c0c0c'
-    foreground: '#cccccc'
-
-  # Normal colors
+    background: "#2b2b2b"
+    foreground: "#e6e1dc"
+  cursor:
+    text: "#2b2b2b"
+    cursor: "#e6e1dc"
   normal:
-    black: '#0c0c0c'
-    red: '#c50f1f'
-    green: '#13a10e'
-    yellow: '#c19c00'
-    blue: '#0037da'
-    magenta: '#881798'
-    cyan: '#3a96dd'
-    white: '#cccccc'
-
-  # Bright colors
+    black: "#2b2b2b"
+    red: "#da4939"
+    green: "#a5c261"
+    yellow: "#ffc66d"
+    blue: "#6d9cbe"
+    magenta: "#b6b3eb"
+    cyan: "#519f50"
+    white: "#e6e1dc"
   bright:
-    black: '#767676'
-    red: '#e74856'
-    green: '#16c60c'
-    yellow: '#f9f1a5'
-    blue: '#3b78ff'
-    magenta: '#b4009e'
-    cyan: '#61d6d6'
-    white: '#f2f2f2'
-theme: Campbell
+    black: "#5a647e"
+    red: "#da4939"
+    green: "#a5c261"
+    yellow: "#ffc66d"
+    blue: "#6d9cbe"
+    magenta: "#b6b3eb"
+    cyan: "#519f50"
+    white: "#f9f7f3"
+theme: Railscasts.dark
