@@ -1,0 +1,14 @@
+alias b="bundle"
+
+alias path='echo $PATH | tr -s ":" "\n"'
+
+alias tl='tail -f -n 100 log/development.log'
+
+alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
+
+alias ..="cd .."
+
+alias vr='vim ~/.vim/vimrc'
+alias vo='source ~/.vim/vimrc'
+alias zr='vim ~/.zshrc'
+alias zo='source ~/.zshrc'

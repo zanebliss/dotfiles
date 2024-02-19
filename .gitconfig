@@ -1,0 +1,28 @@
+[alias]
+  lo = "log"
+  ol = "log --oneline"
+  ame = "commit --amend"
+  amn = "commit --amend --no-edit"
+  rc = "rebase --continue"
+  fu = "!git log origin/main..HEAD -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+  cv = "commit -v"
+  co = "checkout"
+  res = "!f() { git reset --hard origin/${1:-$(git symbolic-ref --short HEAD)}; }; f"
+  dif = "!f() { git diff origin/${1:-$(git symbolic-ref --short HEAD)}; }; f"
+[push]
+  default = current
+[include]
+  path = ~/.gitconfig.credentials
+[core]
+  excludesfile = ~/.gitignore
+  editor = "vim"
+[merge]
+  ff = only
+[commit]
+  template = ~/.gitmessage
+[fetch]
+  prune = true
+[rebase]
+  autosquash = false
+[diff]
+  colorMoved = zebra
