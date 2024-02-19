@@ -78,8 +78,8 @@ nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --excl
 let g:mapleader = ' '
 nnoremap <Leader><Leader> <C-^>
 " Open vimrc in split
-nmap <leader>vr :split ~/.vim/vimrc<cr>
-nmap <leader>so :source ~/.vim/vimrc<cr>
+nmap <leader>vr :split ~/.vimrc<cr>
+nmap <leader>so :source ~/.vimrc<cr>
 " vim-test
 nmap <silent> <leader>s :TestNearest<CR>
 nmap <silent> <leader>t :TestFile<CR>
