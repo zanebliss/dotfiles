@@ -1,7 +1,7 @@
-export EDITOR="vim"
-export VISUAL="vim"
-export BAT_THEME="gruvbox-dark"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
-export HISTSIZE=4096
-export SAVEHIST=4096
-
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"

@@ -1,0 +1,24 @@
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.wildmode = 'longest:full,full'
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.foldmethod = 'syntax'
+vim.opt.foldlevel = 20
+vim.opt.laststatus = 2
+vim.opt.expandtab = true
+vim.opt.softtabstop = 2
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.textwidth = 80
+vim.opt.colorcolumn = '80'
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.swapfile = false
+vim.opt.list = true
+vim.opt.listchars:append({ tab = '»·', trail = '·', nbsp = '·' })
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.wrap = false
+vim.opt.termguicolors = true
+vim.opt.signcolumn = 'no'

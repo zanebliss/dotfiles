@@ -1,28 +1,48 @@
 [alias]
+  o = "open"
+  dc = "diff --cached"
+  a = "add ."
   lo = "log"
   ol = "log --oneline"
   ame = "commit --amend"
   amn = "commit --amend --no-edit"
   rc = "rebase --continue"
-  fu = "!git log origin/main..HEAD -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
   cv = "commit -v"
   co = "checkout"
+  pf = "push -f"
+  st = "stash"
+  sp = "stash pop"
+  rs = "restore --staged ."
+  s = "status"
+  fu = "!git log origin/main..HEAD -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
   res = "!f() { git reset --hard origin/${1:-$(git symbolic-ref --short HEAD)}; }; f"
+  reb = "!f() { git rebase -i HEAD~$(git rev-list origin/main..HEAD --count); }; f"
+  reba = "!f() { git rebase -i HEAD~$(git rev-list origin/main..HEAD --count) --autosquash; }; f"
   dif = "!f() { git diff origin/${1:-$(git symbolic-ref --short HEAD)}; }; f"
+  ctags = !.git/hooks/ctags
 [push]
   default = current
 [include]
   path = ~/.gitconfig.credentials
 [core]
-  excludesfile = ~/.gitignore
-  editor = "vim"
+  excludesfile = /Users/zanebliss/.gitignore
+  editor = "nvim"
 [merge]
   ff = only
+	tool = nvimdiff
 [commit]
   template = ~/.gitmessage
+  verbose = true
 [fetch]
   prune = true
 [rebase]
   autosquash = false
 [diff]
   colorMoved = zebra
+[filter "lfs"]
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+[init]
+  templateddir = ~/.git_template
