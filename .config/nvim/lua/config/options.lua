@@ -22,3 +22,4 @@ vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.signcolumn = 'no'
+vim.o.guicursor = 'a:Block'
