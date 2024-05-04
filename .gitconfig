@@ -29,7 +29,7 @@
   editor = "nvim"
 [merge]
   ff = only
-	tool = nvimdiff
+  tool = nvimdiff
 [commit]
   template = ~/.gitmessage
   verbose = true
@@ -46,3 +46,4 @@
   smudge = git-lfs smudge -- %f
 [init]
   templateddir = ~/.git_template
+  defaultBranch = main
