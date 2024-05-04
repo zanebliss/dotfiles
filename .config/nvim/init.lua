@@ -21,5 +21,3 @@ require('lazy').setup('plugins')
 require('config.mappings')
 
 vim.cmd('colorscheme ayu')
-vim.g.ayucolor = 'dark'
-vim.g.ayu_extended_palette = 1
