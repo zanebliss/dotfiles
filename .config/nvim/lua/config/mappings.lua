@@ -47,6 +47,8 @@ vim.keymap.set('n', '<c-p>', builtin.git_files, {})
 vim.keymap.set('n', '\\', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<leader>;', builtin.registers, {})
+vim.keymap.set('n', '<leader>;', builtin.registers, {})
+vim.keymap.set('n', '<leader>g', builtin.lsp_document_symbols, {})
 
 
 -- fzf-lua
