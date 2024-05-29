@@ -23,3 +23,5 @@ vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.signcolumn = 'no'
 vim.o.guicursor = 'a:Block'
+vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
