@@ -20,4 +20,4 @@ require('lazy').setup('plugins')
 
 require('config.mappings')
 
-vim.cmd('colorscheme ayu')
+vim.cmd('colorscheme ayu-dark')
