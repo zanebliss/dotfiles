@@ -89,7 +89,7 @@ return {
             require('lspconfig').lua_ls.setup(lua_opts)
           end;
           ruby_ls = function()
-            require('lspconfig').ruby_ls.setup({
+            require('lspconfig').ruby_lsp.setup({
               cmd = { vim.fn.expand('$HOME/.rbenv/shims/ruby-lsp') }
             })
           end;
