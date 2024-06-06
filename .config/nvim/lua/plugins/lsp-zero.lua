@@ -93,8 +93,8 @@ return {
               cmd = { vim.fn.expand('$HOME/.rbenv/shims/ruby-lsp') }
             })
           end;
-          ltex_ls = function()
-            require('lspconfig').ltex_ls.setup({
+          ltex = function()
+            require('lspconfig').ltex.setup({
               filetypes = { "markdown", "text", "gitcommit" }
             })
           end
