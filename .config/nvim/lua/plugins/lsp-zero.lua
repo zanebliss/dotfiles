@@ -88,7 +88,7 @@ return {
             local lua_opts = lsp_zero.nvim_lua_ls()
             require('lspconfig').lua_ls.setup(lua_opts)
           end;
-          ruby_ls = function()
+          ruby_lsp = function()
             require('lspconfig').ruby_lsp.setup({
               cmd = { vim.fn.expand('$HOME/.rbenv/shims/ruby-lsp') }
             })
