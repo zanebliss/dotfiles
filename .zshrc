@@ -1,8 +1,3 @@
-source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 autoload -U colors
@@ -38,8 +33,3 @@ export HISTTIMEFORMAT="[%F %T] "
 setopt EXTENDED_HISTORY
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
-
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-# export PATH="$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
-# export PATH="$HOMEBREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
-# export PATH="$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"
