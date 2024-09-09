@@ -20,4 +20,7 @@ require('lazy').setup('plugins')
 
 require('config.mappings')
 
-vim.cmd('colorscheme ayu-dark')
+vim.cmd 'colorscheme quiet'
+
+vim.cmd [[highlight! NormalFloat guibg=#2E2E2E]]
+vim.cmd [[highlight! Pmenu guifg=#FFFFFF guibg=#2E2E2E]]
