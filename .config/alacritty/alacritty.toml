@@ -1,5 +1,14 @@
 [font]
-size = 16.0
+size = 14.0
 
-[window]
-decorations = 'buttonless'
+[font.bold]
+style = "SemiBold"
+
+[font.normal]
+family = "Firacode"
+
+[font.italic]
+style = "Regular"
+
+[font.bold_italic]
+style = "Regular"
