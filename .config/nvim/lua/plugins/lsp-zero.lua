@@ -35,11 +35,7 @@ return {
         completion = {
           completeopt = 'menu,menuone,noinsert'
         },
-        -- window = {
-        --   completion = cmp.config.window.bordered(),
-        --   documentation = cmp.config.window.bordered(),
-        -- },
-        formatting = lsp_zero.cmp_format({ details = true }),
+        formatting = lsp_zero.cmp_format(),
         mapping = cmp.mapping.preset.insert({
           ['<CR>'] = cmp.mapping.confirm({ select = false }),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
@@ -67,13 +63,16 @@ return {
       local lsp_zero = require('lsp-zero')
       lsp_zero.extend_lspconfig()
 
-      --- if you want to know more about lsp-zero and mason.nvim
-      --- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
       lsp_zero.on_attach(function(client, bufnr)
         -- see :help lsp-zero-keybindings
         -- to learn the available actions
+        vim.lsp.inlay_hint.enable(true, { 0 })
+        client.server_capabilities.semanticTokensProvider = false
+        -- for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+        --   vim.api.nvim_set_hl(0, group, {})
+        -- end
+
         lsp_zero.default_keymaps({ buffer = bufnr })
-        -- lsp_zero.buffer_autoformat()
       end)
 
       vim.diagnostic.config({
@@ -93,6 +92,19 @@ return {
               cmd = { vim.fn.expand('$HOME/.rbenv/shims/ruby-lsp') }
             })
           end;
+          rust_analyzer = function()
+            require('lspconfig').rust_analyzer.setup({
+              settings = {
+                ['rust-analyzer'] = {
+                  checkOnSave = true,
+                  check = {
+                    command = 'clippy',
+                    features = 'all'
+                  }
+                }
+              }
+            })
+          end,
           ltex = function()
             require('lspconfig').ltex.setup({
               filetypes = { "markdown", "text", "gitcommit" }

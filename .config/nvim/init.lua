@@ -1,6 +1,37 @@
-require('config.options')
-require('config.autocmds')
+require('colors.vim')
+require('colors.quiet')
 
+-- autocmds
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '*.markdown', 'gitcommit' },
+  callback = function()
+    vim.opt_local.spell = true
+    vim.opt_local.complete:append('kspell')
+  end
+})
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'gitcommit' },
+  callback = function()
+    vim.opt_local.colorcolumn = '50,72'
+  end
+})
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "go",
+  callback = function()
+    vim.bo.expandtab = false
+    vim.bo.tabstop = 4
+    vim.bo.shiftwidth = 4
+    vim.bo.softtabstop = 4
+    vim.opt.list = false
+  end
+})
+--
+
+---- leader
+vim.g.mapleader = ' '
+--
+
+-- lazy package manager
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -13,26 +44,36 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-
-vim.g.mapleader = ' '
-
 require('lazy').setup('plugins')
+--
 
-require('config.mappings')
+-- opts
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.number = true
+vim.opt.colorcolumn = '80'
+vim.opt.undofile = true
+--
 
-vim.cmd('color quiet')
-vim.cmd('set bg=dark')
-vim.cmd [[highlight! Normal guibg=none]]
-vim.cmd [[highlight! NormalFloat guibg=none]]
-vim.cmd [[highlight! Pmenu guifg=#FFFFFF guibg=none]]
-vim.cmd [[highlight! MatchParen guifg=#00afff]]
-vim.cmd [[highlight! Comment guifg=#707070 guibg=NONE gui=italic]]
-vim.cmd [[highlight! DiagnosticUnderlineHint gui=undercurl]]
-vim.cmd [[highlight! DiagnosticUnderlineError gui=undercurl guisp=Red]]
-vim.cmd [[highlight! DiagnosticUnderlineWarn  gui=undercurl guisp=Orange]]
-vim.cmd [[highlight! DiagnosticUnderlineInfo gui=undercurl guisp=LightBlue]]
-vim.cmd [[highlight! DiagnosticUnderlineHint gui=undercurl guisp=LightGrey]]
-vim.cmd [[highlight! DiagnosticUnderlineOk gui=undercurl guisp=LightGreen]]
-vim.cmd [[highlight! DiagnosticHint gui=italic guifg=#707070]]
-vim.cmd [[highlight! DiagnosticWarn gui=italic guifg=Orange]]
-vim.cmd [[highlight! DiagnosticError gui=italic guifg=Red]]
+-- mappings
+vim.keymap.set({ 'n', 'v' }, '<Leader>y', '"+y')
+---- vim-test
+vim.keymap.set('n', '<leader>s', ':TestNearest<cr>', { silent = true })
+vim.keymap.set('n', '<leader>t', ':TestFile<cr>', { silent = true })
+vim.keymap.set('n', '<leader>a', ':TestSuite<cr>', { silent = true })
+vim.keymap.set('n', '<leader>l', ':TestLast<cr>', { silent = true })
+vim.keymap.set('n', '<leader>g', ':TestVisit<cr>', { silent = true })
+---- telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<c-p>', builtin.git_files, {})
+vim.keymap.set('n', '\\', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+vim.keymap.set('n', '<leader>;', builtin.registers, {})
+vim.keymap.set('n', '<leader>;', builtin.registers, {})
+vim.keymap.set('n', '<leader>g', builtin.lsp_document_symbols, {})
+---- lsp
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+--
+
+ColoVim()

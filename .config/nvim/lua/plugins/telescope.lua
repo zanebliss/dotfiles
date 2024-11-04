@@ -15,7 +15,10 @@ return {
 
     telescope.setup {
       defaults = {
-        layout_strategy = 'vertical',
+        layout_strategy = 'bottom_pane',
+        layout_config = {
+          prompt_position = 'bottom'
+        },
         mappings = {
           i = {
             ['<S-Down>'] = actions.cycle_history_next,
@@ -26,5 +29,4 @@ return {
       }
     }
   end,
-  -- enabled = false
 }

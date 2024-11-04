@@ -8,7 +8,9 @@ return {
       configs.setup({
         ensure_installed = { 'ruby', 'rust', 'vimdoc', 'query', 'javascript', 'html' },
         sync_install = true,
-        highlight = { enable = true },
+        highlight = {
+           enable = false
+        },
       })
     end
   },
