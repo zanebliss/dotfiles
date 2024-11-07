@@ -50,7 +50,6 @@ require('lazy').setup('plugins')
 -- opts
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.number = true
 vim.opt.colorcolumn = '80'
 vim.opt.undofile = true
 --
@@ -64,14 +63,23 @@ vim.keymap.set('n', '<leader>a', ':TestSuite<cr>', { silent = true })
 vim.keymap.set('n', '<leader>l', ':TestLast<cr>', { silent = true })
 vim.keymap.set('n', '<leader>g', ':TestVisit<cr>', { silent = true })
 ---- telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
-vim.keymap.set('n', '<c-p>', builtin.git_files, {})
-vim.keymap.set('n', '\\', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
-vim.keymap.set('n', '<leader>b', builtin.buffers, {})
-vim.keymap.set('n', '<leader>;', builtin.registers, {})
-vim.keymap.set('n', '<leader>;', builtin.registers, {})
-vim.keymap.set('n', '<leader>g', builtin.lsp_document_symbols, {})
+-- local builtin = require('telescope.builtin')
+-- vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+-- vim.keymap.set('n', '<c-p>', builtin.git_files, {})
+-- vim.keymap.set('n', '\\', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+-- vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+-- vim.keymap.set('n', '<leader>;', builtin.registers, {})
+-- vim.keymap.set('n', '<leader>;', builtin.registers, {})
+-- vim.keymap.set('n', '<leader>g', builtin.lsp_document_symbols, {})
+---- fzf-lua
+local fzf = require('fzf-lua')
+vim.keymap.set('n', '<leader>pf', fzf.files, {})
+vim.keymap.set('n', '<c-p>', fzf.git_files, {})
+vim.keymap.set('n', '\\', fzf.live_grep, {})
+vim.keymap.set('n', '<leader>b', fzf.buffers, {})
+vim.keymap.set('n', '<leader>;', fzf.registers, {})
+vim.keymap.set('n', '<leader>;', fzf.registers, {})
+vim.keymap.set('n', '<leader>g', fzf.lsp_document_symbols, {})
 ---- lsp
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 --
