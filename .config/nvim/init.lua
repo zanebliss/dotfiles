@@ -56,6 +56,10 @@ vim.opt.undofile = true
 
 -- mappings
 vim.keymap.set({ 'n', 'v' }, '<Leader>y', '"+y')
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 ---- vim-test
 vim.keymap.set('n', '<leader>s', ':TestNearest<cr>', { silent = true })
 vim.keymap.set('n', '<leader>t', ':TestFile<cr>', { silent = true })
